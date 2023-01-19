@@ -1,8 +1,36 @@
 package ru.netology.hw91;
 
 public class Radio {
-    public int currentRadioStation;
-    public int currentVolume;
+    private int currentRadioStation;
+    private int currentVolume;
+
+    public int getCurrentRadioStation() {
+        return currentRadioStation;
+    }
+
+    public void setCurrentRadioStation(int currentRadioStation) {
+        if (currentRadioStation < 0) {
+            return;
+        }
+        if (currentRadioStation > 9) {
+            return;
+        }
+        this.currentRadioStation = currentRadioStation;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
+            return;
+        }
+        if (currentVolume > 10) {
+            return;
+        }
+        this.currentVolume = currentVolume;
+    }
 
     public int setToMinStation() {
         currentRadioStation = 0;
@@ -28,9 +56,6 @@ public class Radio {
         if (currentVolume < 10) {
             currentVolume += 1;
         }
-        if (currentVolume == 10) {
-            currentVolume = currentVolume;
-        }
         if (currentVolume > 10) {
             currentVolume = 10;
         }
@@ -39,9 +64,6 @@ public class Radio {
     public void minusVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        }
-        if (currentVolume == 0) {
-            currentVolume = currentVolume;
         }
         if (currentVolume < 0){
             currentVolume = 0;
