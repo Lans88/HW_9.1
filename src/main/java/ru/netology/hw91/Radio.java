@@ -74,4 +74,7 @@ public class Radio {
             currentRadioStation = 0;
         }
     }
+    public void setMaxStation(int countRadioStation) {
+        maxStation = countRadioStation -1;
+    }
 }

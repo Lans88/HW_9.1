@@ -11,6 +11,7 @@ public class RadioTestParametrs {
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+    
     @Test
     public void shouldeSetRadioStationOverMax(){
         radio.setCurrentRadioStation(28);

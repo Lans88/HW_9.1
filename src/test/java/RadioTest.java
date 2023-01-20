@@ -38,7 +38,7 @@ public class RadioTest {
     @Test
     public void shouldeSetVolumeOverMax() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(23);
+        radio.setCurrentVolume(230);
         int expected = 0;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
@@ -66,9 +66,9 @@ public class RadioTest {
     @Test
     public void shouldeSetToPlusVolumeMax() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.plusVolume();
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
 
