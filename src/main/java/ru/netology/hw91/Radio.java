@@ -3,12 +3,15 @@ package ru.netology.hw91;
 public class Radio {
     private int currentRadioStation;
     private int currentVolume;
+    private int maxStation;
+
 
     public Radio(){
+        maxStation = 9;
 
     }
     public Radio(int amountRadioStation){
-        
+        maxStation = amountRadioStation - 1;
     }
 
     public int getCurrentRadioStation() {
@@ -19,7 +22,7 @@ public class Radio {
         if (currentRadioStation < 0) {
             return;
         }
-        if (currentRadioStation > 9) {
+        if (currentRadioStation > maxStation) {
             return;
         }
         this.currentRadioStation = currentRadioStation;
@@ -33,7 +36,7 @@ public class Radio {
         if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 10) {
+        if (currentVolume > 100) {
             return;
         }
         this.currentVolume = currentVolume;
@@ -41,10 +44,10 @@ public class Radio {
 
 
     public void plusVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume += 1;
         } else {
-            currentVolume = 10;
+            currentVolume = 100;
         }
     }
 
@@ -60,12 +63,12 @@ public class Radio {
         if (currentRadioStation > 0) {
             currentRadioStation = currentRadioStation - 1;
         } else {
-            currentRadioStation = 9;
+            currentRadioStation = maxStation;
         }
     }
 
     public void nextStation() {
-        if (currentRadioStation < 9) {
+        if (currentRadioStation < maxStation) {
             currentRadioStation = currentRadioStation + 1;
         } else {
             currentRadioStation = 0;
