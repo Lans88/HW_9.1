@@ -6,12 +6,12 @@ public class RadioTestParametrs {
     Radio radio = new Radio(25);
     @Test
     public void shouldeSetRadioStation(){
-        radio.setCurrentRadioStation(20);
-        int expected = 20;
+        radio.setCurrentRadioStation(24);
+        int expected = 24;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-    
+
     @Test
     public void shouldeSetRadioStationOverMax(){
         radio.setCurrentRadioStation(28);
